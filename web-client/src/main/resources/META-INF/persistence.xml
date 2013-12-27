@@ -1,0 +1,28 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="WKPersistenceUnit"
+                      transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+        <!-- Audit the User Operations -->
+        <class>com.bibick.core.model.Item</class>
+        <class>com.bibick.core.model.User</class>
+        <class>com.bibick.core.model.Cheque</class>
+        <!--<class>com.wolterskluwer.ereader.server.core.entity.UserIdentity</class>
+        <class>com.wolterskluwer.ereader.server.product.entity.LogProduct</class>
+        <class>com.wolterskluwer.ereader.server.supplement.entity.LogSupplement</class>
+        <class>com.wolterskluwer.ereader.server.sync.entity.Annotation</class>
+        <class>com.wolterskluwer.ereader.server.sync.entity.LastViewedInfo</class>
+        <class>com.wolterskluwer.ereader.server.core.entity.ConfigData</class>
+        <class>com.wolterskluwer.ereader.server.core.entity.ActivityLog</class>
+
+        <class>com.wolterskluwer.ereader.server.pi.model.PersonalItemsUser</class>
+        <class>com.wolterskluwer.ereader.server.pi.model.PersonalItem</class>
+        <class>com.wolterskluwer.ereader.server.pi.model.PersonalItemDevice</class>
+        <class>com.wolterskluwer.ereader.server.pi.model.PIUserDownloads</class>-->
+    </persistence-unit>
+
+</persistence>
