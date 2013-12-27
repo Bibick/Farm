@@ -22,7 +22,6 @@ public class Item {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "cheque_id")
     private Cheque cheque;
 
     public long getItemId() {

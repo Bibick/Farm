@@ -8,4 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Date: 12/24/13 3:15 PM
  */
 public interface UserDAO extends JpaRepository<User, Long> {
+
+    User findUserByFirstNameAndPassword(Object firstName, Object password);
 }

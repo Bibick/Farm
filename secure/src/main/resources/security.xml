@@ -8,17 +8,17 @@
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
-    <http auto-config='true'>
-        <intercept-url pattern="/**" access="ROLE_USER"/>
+    <http>
+        <intercept-url pattern="/**"  access="ROLE_USER"/>
         <http-basic />
     </http>
 
-    <authentication-manager >
+    <authentication-manager>
         <authentication-provider ref="myUserDetailsService">
         </authentication-provider>
     </authentication-manager>
 
-    <beans:bean id="myUserDetailsService" class="com.bibick.secure.FarmAuthenticationProvider">
+    <beans:bean id="myUserDetailsService" class="com.bibick.secure.provoders.FarmAuthenticationProvider">
     </beans:bean>
 
 </beans:beans>
