@@ -21,7 +21,7 @@ import java.util.Collection;
 public class FarmAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
-    private UserDAO userDAO ;
+    private UserDAO userDAO;
 
     //TODO: implement correct authorisation
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
