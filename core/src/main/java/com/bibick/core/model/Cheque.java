@@ -1,8 +1,9 @@
 package com.bibick.core.model;
 
+import org.hibernate.annotations.Fetch;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -25,8 +26,8 @@ public class Cheque {
     @Column(name = "close_date")
     private Date closeDate;
 
-    @OneToMany
-    //@JoinColumn(name = "cheque_id",  nullable = false, insertable = false, updatable = false)
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "sold_items", joinColumns = @JoinColumn(name = "cheque_id"), inverseJoinColumns = @JoinColumn(name = "item_id"))
     private List<Item> items;
 
     @Column(name = "summ")

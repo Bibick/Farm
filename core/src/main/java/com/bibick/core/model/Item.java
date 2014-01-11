@@ -21,9 +21,6 @@ public class Item {
     @Column(name = "description")
     private String description;
 
-    @ManyToOne
-    private Cheque cheque;
-
     public long getItemId() {
         return itemId;
     }
