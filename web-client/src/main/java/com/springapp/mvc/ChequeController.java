@@ -37,14 +37,4 @@ public class ChequeController {
                           .build();
     }
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public @ResponseBody JsonEntity<Test> getTest() {
-        Test test = new Test();
-        test.setName("Bibick");
-        test.setId("1");
-        return JsonBuilder.entity(test)
-                          .build();
-    }
-
-
 }
