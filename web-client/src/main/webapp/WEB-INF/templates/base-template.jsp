@@ -18,7 +18,8 @@
     <title>
         <tiles:getAsString name="title" />
     </title>
-    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/ext-all.css" type="text/css"/>
+    <script type="application/javascript" src="../js/ext-all-debug.js"/>
 </head>
 <body>
 
