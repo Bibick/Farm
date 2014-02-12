@@ -18,6 +18,31 @@ Ext.define('Farm.view.cheque.List' ,{
             {header: 'Cashier', dataIndex: 'cashier.firstName', flex: 1}
         ];
 
+        this.dockedItems = [{
+            xtype: 'toolbar',
+            width   : 400,
+            items: [
+                {
+                    text: 'Insert'
+                },
+                {
+                    xtype: 'button',
+                    text : 'Change'
+                },
+                '->',
+                {
+                    xtype    : 'textfield',
+                    name     : 'field1',
+                    emptyText: 'enter search term'
+                }
+            ]
+        },{
+            xtype: 'pagingtoolbar',
+            store: this.store,   // same store GridPanel is using
+            dock: 'bottom',
+            displayInfo: true
+        }];
+
         this.callParent(arguments);
     }
 });
