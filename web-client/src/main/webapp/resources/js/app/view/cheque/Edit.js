@@ -2,11 +2,11 @@
  * Created by istrakhouski on 2/11/14.
  */
 
-Ext.define('AM.view.user.Edit', {
+Ext.define('Farm.view.cheque.Edit', {
     extend: 'Ext.window.Window',
-    alias: 'widget.useredit',
+    alias: 'widget.chequeedit',
 
-    title: 'Edit User',
+    title: 'Edit Cheque',
     layout: 'fit',
     autoShow: true,
 

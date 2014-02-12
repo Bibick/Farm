@@ -8,6 +8,8 @@ public class JsonBuilder<T> {
 
    private T value;
 
+   private boolean success = true;
+
    public static <T> JsonBuilder <T> entity(T value) {
        return new JsonBuilder<T>(value);
    }
@@ -16,7 +18,16 @@ public class JsonBuilder<T> {
        this.value = value;
    }
 
-   public <T> JsonEntity<T> build() {
-       return new JsonEntity(this.value);
+    public JsonBuilder(T value, boolean success) {
+        this.value = value;
+        this.success = success;
+    }
+
+    public JsonBuilder(boolean success) {
+        this.success = success;
+    }
+
+    public <T> JsonEntity<T> build() {
+       return new JsonEntity(success, this.value);
    }
 }

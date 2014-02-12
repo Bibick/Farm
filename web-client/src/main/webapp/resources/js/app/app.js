@@ -3,19 +3,19 @@
  */
 Ext.application({
     requires: ['Ext.container.Viewport'],
-    name: 'AM',
+    name: 'Farm',
 
     appFolder: 'resources/js/app',
 
     controllers: [
-        'Users'
+        'Cheques'
     ],
 
     launch: function() {
         Ext.create('Ext.container.Viewport', {
             layout: 'fit',
             items: {
-                xtype: 'userlist'
+                xtype: 'chequelist'
             }
         });
     }

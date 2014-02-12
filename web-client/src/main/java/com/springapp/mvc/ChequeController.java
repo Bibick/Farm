@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * User: istrakhouski
  * Date: 12/27/13 4:18 PM
@@ -34,6 +36,12 @@ public class ChequeController {
         Cheque cheque = chequeService.getCheque(chequeId);
         ChequeDTO chequeDTO = new ChequeDTO(cheque);
         return JsonBuilder.entity(chequeDTO)
+                          .build();
+    }
+
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET, produces = "application/json")
+    public @ResponseBody JsonEntity<List<ChequeDTO>> getAllCheques() {
+        return JsonBuilder.entity(chequeService.getAllCheques())
                           .build();
     }
 

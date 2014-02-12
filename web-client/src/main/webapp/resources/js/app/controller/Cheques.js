@@ -1,32 +1,32 @@
 /**
  * Created by istrakhouski on 2/11/14.
  */
-Ext.define('AM.controller.Users', {
+Ext.define('Farm.controller.Cheques', {
     extend: 'Ext.app.Controller',
 
     views: [
-        'user.List',
-        'user.Edit'
+        'cheque.List',
+        'cheque.Edit'
     ],
 
     stores: [
-        'Users'
+        'Cheques'
     ],
-    models: ['User'],
+    models: ['Cheque'],
 
     init: function() {
         this.control({
-            'viewport > userlist': {
+            'viewport > chequelist': {
                 itemdblclick: this.editUser
             },
-            'useredit button[action=save]': {
+            'chequeedit button[action=save]': {
                 click: this.updateUser
             }
         });
     },
 
     editUser: function(grid, record) {
-        var view = Ext.widget('useredit');
+        var view = Ext.widget('chequeedit');
 
         view.down('form').loadRecord(record);
     },

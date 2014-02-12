@@ -6,6 +6,8 @@ import com.bibick.core.service.ChequeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * User: istrakhouski
  * Date: 12/27/13 4:21 PM
@@ -22,5 +24,9 @@ public class ChequeServiceImpl implements ChequeService {
 
     public Cheque getCheque(long chequeId) {
         return chequeDAO.findOne(chequeId);
+    }
+
+    public List<Cheque> getAllCheques() {
+        return chequeDAO.findAll();
     }
 }
