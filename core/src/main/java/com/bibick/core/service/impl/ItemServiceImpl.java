@@ -6,6 +6,7 @@ import com.bibick.core.service.ItemService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * User: istrakhouski
@@ -23,5 +24,9 @@ public class ItemServiceImpl implements ItemService {
 
     public void addItem(Item item) {
         itemDAO.save(item);
+    }
+
+    public List<Item> getAllItems() {
+        return itemDAO.findAll();
     }
 }

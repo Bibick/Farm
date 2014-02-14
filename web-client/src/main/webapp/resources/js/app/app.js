@@ -2,13 +2,14 @@
  * Created by istrakhouski on 2/11/14.
  */
 Ext.application({
-    requires: ['Ext.container.Viewport'],
+    requires: ['Ext.container.Container'],
     name: 'Farm',
 
     appFolder: 'resources/js/app',
 
     controllers: [
-        'Cheques'
+        'Cheques',
+        'Items'
     ],
 
     launch: function() {
@@ -35,7 +36,10 @@ Ext.application({
                                 xtype: 'chequelist'
                             }
                         }, {
-                            title: 'Other tab'
+                            title: 'Items',
+                            items: {
+                                xtype: 'itemslist'
+                            }
                         }
                     ]
                 }
