@@ -3,11 +3,12 @@
  */
 Ext.define('Farm.model.Cheque', {
     extend: 'Ext.data.Model',
+    idProperty: 'chequeId',
     fields: [
-        'chequeId',
+        {name: 'chequeId', type: 'string'},
         'createDate',
         'closeDate',
         'summ',
-        'cashier.firstName'
+        {name: 'cashier', mapping: 'cashier.firstName', persist: false}
     ]
 });

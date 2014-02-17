@@ -16,15 +16,18 @@ Ext.define('Farm.view.items.List' ,{
     initComponent: function() {
         this.columns = [
             {header: 'Name',  dataIndex: 'name',  flex: 1},
-            {header: 'Description', dataIndex: 'description', flex: 1}
+            {header: 'Description', dataIndex: 'description', flex: 1},
+            {header: 'Price', dataIndex: 'price', flex: 1}
         ];
-
+        var me = this;
         this.dockedItems = [{
             xtype: 'toolbar',
             width   : 400,
             items: [
                 {
-                    text: 'Insert'
+                    xtype: 'button',
+                    text: 'Insert',
+                    action: 'insertItem'
                 },
                 {
                     xtype: 'button',

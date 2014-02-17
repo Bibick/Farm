@@ -5,8 +5,21 @@ Ext.define('Farm.controller.Items', {
     extend: 'Ext.app.Controller',
 
     views: [
-        'items.List'/*,
-        'items.Edit'*/
+        'items.List',
+        'items.Add'
+    ],
+
+    refs: [
+        {
+            ref: 'addItemsWindow',
+            selector: 'additemswindow',
+            autoCreate: true,
+            xtype: 'additemswindow'
+        }, {
+            ref: 'addItemsWindowForm',
+            selector: 'additemswindow > form'
+        }
+
     ],
 
     stores: [
@@ -16,28 +29,48 @@ Ext.define('Farm.controller.Items', {
 
     init: function() {
         this.control({
-            'viewport > itemlist': {
-                itemdblclick: this.editUser
-            }/*,
-            'chequeedit button[action=save]': {
-                click: this.updateUser
-            }*/
+            'container > itemslist': {
+                itemdblclick: this.editItem
+            },
+            'itemslist button[action=insertItem]': {
+                click: this.addItemForm
+            },
+            'additemswindow button[action=add]' : {
+                click: this.insertItem
+            }
         });
+
     },
 
-    editUser: function(grid, record) {
-        var view = Ext.widget('chequeedit');
+    addItemForm: function() {
+        this.getAddItemsWindow().show();
+    },
+
+    insertItem: function() {
+        var store = this.getStore('Items'),
+            values = this.getAddItemsWindowForm().getValues();
+
+        if(!values.itemId) {
+            store.add(values);
+        } else {
+            //TODO: do somethings with manual field set
+            var record = store.getById(values.itemId);
+            record.set('name', values.name);
+            record.set('description', values.description);
+            record.set('price', values.description);
+        }
+
+        store.sync();
+    },
+
+    editItem: function(grid, record) {
+        var view = Ext.widget('additemswindow');
 
         view.down('form').loadRecord(record);
+        view.show();
     },
 
     updateUser: function(button) {
-        var win    = button.up('window'),
-            form   = win.down('form'),
-            record = form.getRecord(),
-            values = form.getValues();
-
-        record.set(values);
-        win.close();
+       console.log("Test form controller");
     }
 });

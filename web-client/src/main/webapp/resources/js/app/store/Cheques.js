@@ -3,7 +3,6 @@
  */
 Ext.define('Farm.store.Cheques', {
     extend: 'Ext.data.Store',
-    //fields: ['name', 'email'],
     model: 'Farm.model.Cheque',
 
     autoLoad: true,
@@ -11,6 +10,7 @@ Ext.define('Farm.store.Cheques', {
     proxy: {
         type: 'ajax',
         api: {
+            create: './cheque/add',
             read: './cheque/getAll',
             update: './cheque/update'
         },

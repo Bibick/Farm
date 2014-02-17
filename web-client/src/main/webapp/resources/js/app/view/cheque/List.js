@@ -15,7 +15,7 @@ Ext.define('Farm.view.cheque.List' ,{
             {header: 'Create date', dataIndex: 'createDate', flex: 1},
             {header: 'Close date',  dataIndex: 'closeDate',  flex: 1},
             {header: 'Summ', dataIndex: 'summ', flex: 1},
-            {header: 'Cashier', dataIndex: 'cashier.firstName', flex: 1}
+            {header: 'Cashier', dataIndex: 'cashier', flex: 1}
         ];
 
         this.dockedItems = [{
@@ -23,11 +23,14 @@ Ext.define('Farm.view.cheque.List' ,{
             width   : 400,
             items: [
                 {
-                    text: 'Insert'
+                    xtype: 'button',
+                    text: 'Insert',
+                    action: 'add'
                 },
                 {
                     xtype: 'button',
-                    text : 'Change'
+                    text : 'Add items',
+                    action: 'addItems'
                 },
                 '->',
                 {

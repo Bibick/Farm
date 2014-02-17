@@ -18,15 +18,15 @@ public class ItemServiceImpl implements ItemService {
     @Resource
     ItemDAO itemDAO;
 
-    public String print() {
-        return "Bibick";
-    }
-
     public void addItem(Item item) {
         itemDAO.save(item);
     }
 
     public List<Item> getAllItems() {
         return itemDAO.findAll();
+    }
+
+    public void updateItem(Item item) {
+        itemDAO.save(item);
     }
 }

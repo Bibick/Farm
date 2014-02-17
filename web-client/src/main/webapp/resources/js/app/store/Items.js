@@ -4,7 +4,6 @@
 
 Ext.define('Farm.store.Items', {
     extend: 'Ext.data.Store',
-    //fields: ['name', 'email'],
     model: 'Farm.model.Item',
 
     autoLoad: true,
@@ -12,8 +11,9 @@ Ext.define('Farm.store.Items', {
     proxy: {
         type: 'ajax',
         api: {
+            create: './item/add',
             read: './item/getAll',
-            update: './items/update'
+            update: './item/update'
         },
         reader: {
             type: 'json',

@@ -33,7 +33,7 @@ public class FarmAuthenticationProvider implements AuthenticationProvider {
         if(user != null) {
             Collection<Authority> authorities = new ArrayList<Authority>();
             authorities.add(new Authority("ROLE_USER"));
-            authentication = new UsernamePasswordAuthenticationToken(pass, login, authorities);
+            authentication = new UsernamePasswordAuthenticationToken(login, pass, authorities);
         }
 
         return authentication;

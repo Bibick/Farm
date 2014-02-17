@@ -3,8 +3,11 @@
  */
 Ext.define('Farm.model.Item', {
     extend: 'Ext.data.Model',
+    idProperty: 'itemId',
     fields: [
+        {name: 'itemId', type: 'string'},
         'name',
-        'description'
+        'description',
+        {name: 'price', type: 'string'}
     ]
 });

@@ -1,6 +1,7 @@
 package com.bibick.core.model;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 /**
  * User: istrakhouski
@@ -20,6 +21,9 @@ public class Item {
 
     @Column(name = "description")
     private String description;
+
+    @Column(name = "price")
+    private BigDecimal price;
 
     public long getItemId() {
         return itemId;
@@ -43,5 +47,13 @@ public class Item {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }
